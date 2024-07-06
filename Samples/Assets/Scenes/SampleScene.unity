@@ -122,6 +122,77 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &596973530 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 646389193020066211, guid: 24fa9e200bae3463e9a61f48aff7df0a, type: 3}
+  m_PrefabInstance: {fileID: 1726459914}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &596973533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596973530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25bf7ad7aa67241139ab021aa40ef923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &596973538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596973530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3f8ebb1ea1f4482b9bf508f01e6b3bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movement: {fileID: 596973539}
+  _inputController: {fileID: 596973533}
+--- !u!114 &596973539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596973530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5882a185809d14b3da879f3928c0da64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 10
+--- !u!54 &596973540
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596973530}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +527,19 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 646389193020066211, guid: 24fa9e200bae3463e9a61f48aff7df0a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 596973533}
+    - targetCorrespondingSourceObject: {fileID: 646389193020066211, guid: 24fa9e200bae3463e9a61f48aff7df0a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 596973539}
+    - targetCorrespondingSourceObject: {fileID: 646389193020066211, guid: 24fa9e200bae3463e9a61f48aff7df0a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 596973538}
+    - targetCorrespondingSourceObject: {fileID: 646389193020066211, guid: 24fa9e200bae3463e9a61f48aff7df0a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 596973540}
   m_SourcePrefab: {fileID: 100100000, guid: 24fa9e200bae3463e9a61f48aff7df0a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
