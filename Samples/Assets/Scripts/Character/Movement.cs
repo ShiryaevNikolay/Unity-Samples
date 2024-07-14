@@ -1,12 +1,25 @@
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class Movement
 {
-    [SerializeField] private float _speed;
+    private float _speed;
+    private Transform _object;
 
-    public void Move(Vector3 direction)
+    public Movement(Transform gameObject, float speed)
     {
-        float distance = _speed * Time.deltaTime;
-        transform.position += direction * distance;
+        _object = gameObject;
+        _speed = speed;
+    }
+
+    public void Move(Vector2 direction)
+    {
+        // Обрабатываем мертвую зону
+        if (direction.sqrMagnitude < 0.1f)
+            return;
+
+        float scaledMoveSpeed = _speed * Time.deltaTime;
+        Vector3 offset = new Vector3(direction.x, 0f, direction.y) * scaledMoveSpeed;
+        
+        _object.transform.Translate(offset);
     }
 }

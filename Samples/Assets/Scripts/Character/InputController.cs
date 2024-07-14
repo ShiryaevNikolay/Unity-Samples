@@ -1,9 +1,9 @@
-using System;
 using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
-    public event Action<Vector3> InputAction;
+    public Vector2 MoveDirection { get; private set; }
+    public Vector2 LookDirection { get; private set; }
 
     private GameInput _gameInput;
 
@@ -20,8 +20,7 @@ public class InputController : MonoBehaviour
     }
 
     private void Update() {
-        Vector2 inputDirection = _gameInput.Player.Move.ReadValue<Vector2>();
-        Vector3 moveDirection = new Vector3(inputDirection.x, 0f, inputDirection.y);
-        InputAction?.Invoke(moveDirection);
+        MoveDirection = _gameInput.Player.Move.ReadValue<Vector2>();
+        LookDirection = _gameInput.Player.Look.ReadValue<Vector2>();
     }
 }
