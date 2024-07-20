@@ -6,14 +6,13 @@ public class ThirdPersonCam : MonoBehaviour
     [SerializeField] private Transform _player;
 
     [SerializeField] private float _rotationSpeed;
+    [SerializeField] private CameraStyle _currentStyle;
 
     private InputController _inputController;
     private Transform _orientation;
     private Transform _playerObject;
      private Transform _combatLookAt;
     private Rigidbody _rigidbody; // TODO: зачем тут?
-
-    private CameraStyle _currentStyle = CameraStyle.Combat;
 
     public enum CameraStyle
     {
