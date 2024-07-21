@@ -24,7 +24,7 @@ public class PlayerInputReader : GameInput.IPlayerActions
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public void OnMove(InputAction.CallbackContext context)

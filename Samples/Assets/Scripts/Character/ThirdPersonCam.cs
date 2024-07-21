@@ -8,11 +8,10 @@ public class ThirdPersonCam : MonoBehaviour
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private CameraStyle _currentStyle;
 
-    private InputController _inputController;
+    private Mover _playerMover;
     private Transform _orientation;
     private Transform _playerObject;
-     private Transform _combatLookAt;
-    private Rigidbody _rigidbody; // TODO: зачем тут?
+    private Transform _combatLookAt;
 
     public enum CameraStyle
     {
@@ -22,9 +21,8 @@ public class ThirdPersonCam : MonoBehaviour
 
     private void Awake()
     {
-        _inputController = _player.GetComponent<InputController>();
         _playerObject = _player.Find("PlayerObj");
-        _rigidbody = _player.GetComponent<Rigidbody>();
+        _playerMover = _player.GetComponent<Mover>();
         _orientation = _player.Find("Orientation");
         _combatLookAt = _orientation.Find("CombatLookAt");
     }
@@ -40,12 +38,12 @@ public class ThirdPersonCam : MonoBehaviour
         // Игрок при этом может смотреть на камеру
         if (_currentStyle == CameraStyle.Basic)
         {
-            Vector2 inputDirection = _inputController.MoveDirection;
+            Vector2 inputDirection = _playerMover.MoveDirection;
             Vector3 moveDirection = _orientation.forward * inputDirection.y + _orientation.right * inputDirection.x;
 
             if (moveDirection != Vector3.zero)
             {
-                _playerObject.forward = Vector3.Slerp(_playerObject.forward, moveDirection.normalized, Time.deltaTime * _rotationSpeed);
+                _player.forward = Vector3.Slerp(_player.forward, moveDirection.normalized, Time.deltaTime * _rotationSpeed);
             }
         }
         // Иначе, если стиль камеры `Бой`, то игрок будет всегда смотреть в прицел
